@@ -1,0 +1,16 @@
+# == Variables ==
+# 
+# You can define here your project Variables.
+# If you want to define/override a Variable for a specific Environment, 
+# add an additional ‘variables.yaml’ file in a subdirectory in the ‘Config’ folder: 
+# '<project>/Config/_<environment>/variables.yaml
+#
+Variables:
+  # [enum: DB2, H2, HSQL, MYSQL, ORACLE, POSTGRESQL, SQL_SERVER, SYBASE]
+  dbType: H2
+  dbHost: mem
+  dbPort: 
+  dbName: db-versioning-demo.h2
+  dbUsername: sa
+  dbPassword: 
+  dbSqlLocations: db/migration-h2/

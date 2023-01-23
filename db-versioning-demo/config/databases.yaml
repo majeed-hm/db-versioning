@@ -1,0 +1,5 @@
+Databases:
+  demo:
+    Url: jdbc:mysql://
+    Driver: com.mysql.cj.jdbc.Driver
+    Password: ${decrypt:}

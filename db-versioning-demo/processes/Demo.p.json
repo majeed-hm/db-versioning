@@ -1,0 +1,45 @@
+{
+  "format" : "10.0.0",
+  "id" : "1855EB5FAF2CE717",
+  "config" : {
+    "data" : "com.axonivy.utils.dbversioning.demo.DemoData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "start.ivp",
+      "config" : {
+        "callSignature" : "start",
+        "outLink" : "start.ivp"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 }
+      },
+      "connect" : { "id" : "f4", "to" : "f3" }
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "Script",
+      "name" : "DB versioning",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import com.axonivy.utils.dbversioning.demo.DemoFileUtils;",
+            "import com.axonivy.utils.dbversioning.service.DBVersioningService;",
+            "",
+            "",
+            "DBVersioningService.startFlywayMigration(DemoFileUtils.getMigrationDirectory());"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 64 }
+      },
+      "connect" : { "id" : "f2", "to" : "f1" }
+    } ]
+}
