@@ -5,8 +5,8 @@
       "data": {
         "projects": [
           {
-            "groupId": "MY-GROUP-ID",
-            "artifactId": "MY-PRODUCT-NAME-demo",
+            "groupId": "com.axonivy.utils.dbversioning",
+            "artifactId": "db-versioning-demo",
             "version": "${version}",
             "type": "iar"
           }
@@ -27,8 +27,8 @@
       "data": {
         "dependencies": [
           {
-            "groupId": "MY-GROUP-ID",
-            "artifactId": "MY-PRODUCT-NAME",
+            "groupId": "com.axonivy.utils.dbversioning",
+            "artifactId": "db-versioning",
             "version": "${version}",
             "type": "iar"
           }
