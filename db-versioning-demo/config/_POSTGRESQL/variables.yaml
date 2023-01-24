@@ -6,11 +6,14 @@
 # '<project>/Config/_<environment>/variables.yaml
 #
 Variables:
-  # [enum: DB2, H2, HSQL, MYSQL, ORACLE, POSTGRESQL, SQL_SERVER, SYBASE]
-  dbType: POSTGRESQL
-  dbHost: //localhost
-  dbPort: 5433
-  dbName: db-versioning-demo
-  dbUsername: postgres
-  dbPassword: postgres
-  dbSqlLocations: db/migration-postgresql/
+  dbVersioning:
+    # [enum: DB2, H2, HSQL, MYSQL, ORACLE, POSTGRESQL, SQLSERVER, SYBASE]
+    dbType: POSTGRESQL
+    dbHost: //localhost
+    dbPort: 5433
+    dbName: db-versioning-demo
+    dbUsername: postgres
+    dbPassword: postgres
+
+    demo:
+      dbSqlLocations: db/migration-postgresql/

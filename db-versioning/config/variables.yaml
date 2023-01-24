@@ -6,10 +6,11 @@
 # '<project>/Config/_<environment>/variables.yaml
 #
 Variables:
-  # [enum: DB2, H2, HSQL, MYSQL, ORACLE, POSTGRESQL, SQL_SERVER, SYBASE]
-  dbType: 
-  dbHost: 
-  dbPort: 
-  dbName: 
-  dbUsername: 
-  dbPassword: 
+  dbVersioning:
+    # [enum: DB2, H2, HSQL, MYSQL, ORACLE, POSTGRESQL, SQLSERVER, SYBASE]
+    dbType: 
+    dbHost: 
+    dbPort: 
+    dbName: 
+    dbUsername: 
+    dbPassword: 

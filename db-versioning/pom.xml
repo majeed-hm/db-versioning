@@ -6,12 +6,20 @@
   <artifactId>db-versioning</artifactId>
   <version>10.0.3-SNAPSHOT</version>
   <packaging>iar</packaging>
+  <properties>
+    <flywaydb.version>9.10.2</flywaydb.version>
+  </properties>
   <dependencies>
     <!-- https://mvnrepository.com/artifact/org.flywaydb/flyway-core -->
     <dependency>
       <groupId>org.flywaydb</groupId>
       <artifactId>flyway-core</artifactId>
-      <version>9.10.2</version>
+      <version>${flywaydb.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.flywaydb</groupId>
+      <artifactId>flyway-sqlserver</artifactId>
+      <version>${flywaydb.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-hikaricp -->
     <dependency>
@@ -30,6 +38,12 @@
       <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>
       <version>42.5.1</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
+    <dependency>
+      <groupId>com.microsoft.sqlserver</groupId>
+      <artifactId>mssql-jdbc</artifactId>
+      <version>12.1.0.jre11-preview</version>
     </dependency>
   </dependencies>
   <build>

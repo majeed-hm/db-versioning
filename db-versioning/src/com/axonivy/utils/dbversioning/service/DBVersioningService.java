@@ -18,12 +18,12 @@ import ch.ivyteam.ivy.environment.Ivy;
 
 
 public class DBVersioningService {
-	private static final String IVY_VAR_DB_TYPE = "dbType";
-	private static final String IVY_VAR_DB_HOST = "dbHost";
-	private static final String IVY_VAR_DB_PORT = "dbPort";
-	private static final String IVY_VAR_DB_NAME = "dbName";
-	private static final String IVY_VAR_DB_USERNAME = "dbUsername";
-	private static final String IVY_VAR_DB_PASSWORD = "dbPassword";
+	private static final String IVY_VAR_DB_TYPE = "dbVersioning.dbType";
+	private static final String IVY_VAR_DB_HOST = "dbVersioning.dbHost";
+	private static final String IVY_VAR_DB_PORT = "dbVersioning.dbPort";
+	private static final String IVY_VAR_DB_NAME = "dbVersioning.dbName";
+	private static final String IVY_VAR_DB_USERNAME = "dbVersioning.dbUsername";
+	private static final String IVY_VAR_DB_PASSWORD = "dbVersioning.dbPassword";
 	
 	private static final String LOCATION_TYPE = "filesystem:";
 	
@@ -41,7 +41,12 @@ public class DBVersioningService {
 		}
 		String dbName = Ivy.var().get(IVY_VAR_DB_NAME);
 		if(StringUtils.isNotBlank(dbName)) {
-			jdbcUrl.append("mem".equals(dbHost)? ":": "/").append(dbName);
+			if(database == SupportedDatabase.SQLSERVER) {
+				jdbcUrl.append(";databaseName=").append(dbName).append(";trustServerCertificate=true;");
+			}
+			else {
+				jdbcUrl.append("mem".equals(dbHost)? ":": "/").append(dbName);
+			}
 		}
 		
 		return jdbcUrl.toString();
@@ -137,7 +142,7 @@ public class DBVersioningService {
 		MYSQL("jdbc:mysql", ""),
 		ORACLE("jdbc:oracle", ""),
 		POSTGRESQL("jdbc:postgresql", "org.postgresql.Driver"),
-		SQL_SERVER("jdbc:", ""),
+		SQLSERVER("jdbc:sqlserver", "com.microsoft.sqlserver.jdbc.SQLServerDriver"),
 		SYBASE("jdbc:", "")
 		;
 

@@ -8,7 +8,7 @@ import ch.ivyteam.ivy.environment.Ivy;
 
 
 public class DemoFileUtils {
-	private static final String IVY_VAR_DB_SQL_LOCATIONS = "dbSqlLocations";
+	private static final String IVY_VAR_DB_SQL_LOCATIONS = "dbVersioning.demo.dbSqlLocations";
 
 	
 	
